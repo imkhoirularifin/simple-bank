@@ -1,0 +1,5 @@
+*.env
+*.log
+*.sum
+*.env
+settings.json
