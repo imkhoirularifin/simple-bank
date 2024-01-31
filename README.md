@@ -50,12 +50,24 @@ SESSION_KEY="wonderfulIndonesia"
 SESSION_MAX_AGE=604800 # expire in 7 day, data stored in seconds
 ```
 
-7. Run the Project
+7. Configure DB_URL in Makefile
+
+```example
+DB_URL=postgresql://{user}:{password}@{host}:{port}/simple-bank?sslmode=disable
+```
+
+8. Migrate up
+
+```shell
+make migrateup
+```
+
+9. Run the Project
 
 ```shell
 go run .
 ```
 
-8. Import postman collection from this project file, all json request are in there
+10. Import postman collection from this project file, all json request are in there
 
 Note: This project is far from perfect, there is still a lot of inefficient code and lack of security on the backend, I don't use JWT for authentication, I only store user information in the session which is in the client cookie, I hope to develop this project deeper to implement the best practices in all aspects.
